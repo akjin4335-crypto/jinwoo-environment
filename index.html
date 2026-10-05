@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="진우환경개발 전문건설 홈페이지" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>진우환경개발</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans KR",sans-serif;color:#162130;background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 48px));margin:auto}
+
+.site-header{position:fixed;top:0;left:0;right:0;height:82px;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(19,33,48,.08)}
+.header-inner{max-width:1280px;width:calc(100% - 48px);height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:13px}
+.brand-mark{display:grid;place-items:center;width:42px;height:42px;background:#f28a22;border-radius:11px;box-shadow:0 10px 24px rgba(242,138,34,.22)}
+.brand-mark svg{width:27px;fill:#fff}
+.brand-copy{display:flex;flex-direction:column;line-height:1}
+.brand-copy strong{font-size:19px;letter-spacing:-.5px;max-width:250px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#102033}
+.brand-copy small{margin-top:6px;font-size:8px;letter-spacing:1.25px;color:#8d98a5}
+.nav{display:flex;align-items:center;gap:31px;font-size:14px;font-weight:700;color:#495667}
+.nav a{transition:.2s}
+.nav a:hover{color:#f28a22}
+.nav-cta{padding:11px 17px;border-radius:10px;background:#102033;color:#fff!important;box-shadow:0 8px 22px rgba(16,32,51,.14)}
+.menu-btn{display:none;border:0;background:none}
+
+.hero{position:relative;overflow:hidden;padding-top:82px;background:linear-gradient(180deg,#ffffff 0%,#f7f9fb 100%)}
+.hero-orbit{position:absolute;border-radius:50%;pointer-events:none}
+.orbit-a{width:680px;height:680px;border:1px solid rgba(242,138,34,.14);right:-350px;top:30px}
+.orbit-b{width:430px;height:430px;background:radial-gradient(circle,rgba(242,138,34,.13),rgba(242,138,34,0) 66%);right:80px;top:160px}
+.hero-inner{min-height:690px;display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center;position:relative}
+.hero-kicker{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:1.9px;font-weight:800;color:#667385;margin-bottom:24px}
+.kicker-dot{width:9px;height:9px;border-radius:50%;background:#f28a22;box-shadow:0 0 0 6px rgba(242,138,34,.12)}
+.hero h1,.section-heading h2,.process-head h2,.contact h2{margin:0;font-weight:900;letter-spacing:-3.3px;line-height:1.12;color:#102033}
+.hero h1{font-size:clamp(46px,5.8vw,76px)}
+.hero h1 em,.section-heading h2 em,.process-head h2 em{font-style:normal;color:#f28a22}
+.hero-desc{max-width:560px;font-size:18px;color:#667385;margin:28px 0 34px;word-break:keep-all}
+.hero-actions{display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:30px;padding:15px 22px;border-radius:12px;font-size:14px;font-weight:800;transition:.2s}
+.btn-primary{background:#102033;color:#fff;box-shadow:0 14px 28px rgba(16,32,51,.14)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(16,32,51,.19)}
+.btn-outline{background:#fff;border:1px solid #d7dde4;color:#102033}
+.btn-outline:hover{border-color:#aeb7c2}
+.hero-trust{display:flex;gap:28px;margin-top:42px;padding-top:25px;border-top:1px solid #e3e7eb}
+.hero-trust div{display:flex;gap:9px;align-items:center}
+.hero-trust strong{font-size:11px;color:#f28a22}
+.hero-trust span{font-size:12px;color:#6c7784;font-weight:600}
+
+.hero-visual-wrap{position:relative}
+.hero-photo{height:510px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(135deg,#8da4b8 0%,#557185 44%,#243b4d 100%);box-shadow:0 30px 65px rgba(22,48,68,.18)}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(13,30,45,.22))}
+.hero-photo-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:54px 54px}
+.hero-structure{position:absolute;inset:auto 0 0 0;width:100%;height:auto;z-index:1}
+.photo-caption{position:absolute;left:28px;bottom:28px;z-index:3;color:#fff}
+.photo-caption span{display:block;font-size:9px;letter-spacing:1.8px;opacity:.72;margin-bottom:5px}
+.photo-caption strong{font-size:21px}
+.floating-card{position:absolute;background:#fff;border:1px solid #e9edf1;border-radius:16px;box-shadow:0 18px 42px rgba(22,48,68,.13);z-index:4}
+.card-a{width:160px;right:-24px;top:-24px;padding:20px}
+.card-a small{display:block;font-size:8px;letter-spacing:1.5px;color:#8d98a5;margin-bottom:11px}
+.card-a strong{font-size:24px;line-height:1.05;color:#f28a22}
+.card-b{left:-30px;bottom:36px;padding:14px 18px;display:flex;align-items:center;gap:12px}
+.signal{width:11px;height:11px;border-radius:50%;background:#34b36b;box-shadow:0 0 0 5px rgba(52,179,107,.12)}
+.card-b small{display:block;font-size:8px;letter-spacing:1.1px;color:#8d98a5}
+.card-b strong{font-size:13px;color:#102033}
+.stats-bar{border-top:1px solid #e5e9ee;background:#fff}
+.stats-inner{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{display:flex;align-items:baseline;gap:14px;padding:23px 28px;border-right:1px solid #e7ebef}
+.stat:first-child{border-left:1px solid #e7ebef}
+.stat strong{font-size:27px;color:#102033}
+.stat span{font-size:12px;color:#83909e;font-weight:600}
+
+.section{padding:126px 0}
+.eyebrow{margin:0 0 18px;font-size:11px;letter-spacing:2px;font-weight:900;color:#f28a22}
+.eyebrow.white{color:#fff}
+.section-heading h2,.process-head h2{font-size:clamp(38px,4.5vw,60px)}
+.intro{background:#fff}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:110px;align-items:start}
+.intro-copy{padding-top:28px;color:#667385}
+.intro-copy .lead{font-size:22px;line-height:1.6;color:#263447;font-weight:800;margin-top:0}
+.intro-copy p{word-break:keep-all}
+.text-link{display:inline-flex;align-items:center;gap:40px;margin-top:18px;font-size:13px;font-weight:800;color:#102033;border-bottom:1px solid #bfc7d0;padding-bottom:7px}
+.value-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:78px}
+.value-card{padding:28px 30px;border:1px solid #e4e8ec;border-radius:18px;background:#fbfcfd}
+.value-card span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff0e1;color:#f28a22;font-size:10px;font-weight:900}
+.value-card h3{margin:20px 0 4px;font-size:23px;color:#102033}
+.value-card p{margin:0;color:#7d8997;font-size:13px}
+
+.services{background:#f6f8fa}
+.section-top{display:flex;align-items:end;justify-content:space-between;gap:60px}
+.section-note{max-width:340px;margin:0 0 7px;color:#8893a0;font-size:13px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:62px}
+.service-card{position:relative;min-height:300px;padding:30px;border:1px solid #e0e5ea;border-radius:20px;background:#fff;overflow:hidden;transition:.28s}
+.service-card:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(242,138,34,.08);right:-70px;top:-70px;transition:.28s}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(25,45,66,.10);border-color:#d5dce3}
+.service-card:hover:after{transform:scale(1.18)}
+.service-card .code{font-size:10px;font-weight:900;color:#f28a22}
+.service-card .service-icon{width:54px;height:54px;border-radius:15px;background:#f5f7f9;display:grid;place-items:center;margin-top:34px;color:#102033;font-size:24px}
+.service-card h3{font-size:24px;margin:24px 0 2px;color:#102033;letter-spacing:-.8px}
+.service-card .sub{font-size:9px;letter-spacing:1.5px;color:#9aa5b0}
+.service-card p{font-size:14px;color:#75818e;margin:17px 0 0;word-break:keep-all}
+
+.process-section{padding:120px 0;background:#102033;color:#fff}
+.process-head h2{color:#fff}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.process-item{padding:34px 28px;border-right:1px solid rgba(255,255,255,.14)}
+.process-item:first-child{border-left:1px solid rgba(255,255,255,.14)}
+.process-no{font-size:10px;color:#f5a04d;font-weight:900}
+.process-item h3{font-size:21px;margin:26px 0 10px}
+.process-item p{font-size:13px;color:#a9b3bf;margin:0}
+
+.projects{background:#fff}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:62px}
+.project-card{position:relative;min-height:350px;border-radius:20px;overflow:hidden;background:#dfe6eb}
+.project-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.project-card:hover img{transform:scale(1.045)}
+.project-placeholder{position:absolute;inset:0;background:linear-gradient(145deg,#eaf0f4,#c8d5de);display:grid;place-items:center}
+.project-placeholder:before{content:"";position:absolute;inset:18px;border:1px dashed rgba(63,91,110,.26);border-radius:14px}
+.project-placeholder svg{width:105px;opacity:.15}
+.project-overlay{position:absolute;inset:0;background:linear-gradient(transparent 38%,rgba(12,29,43,.76));display:flex;flex-direction:column;justify-content:end;padding:28px;color:#fff}
+.project-overlay small{font-size:10px;letter-spacing:1.4px;color:#ffc17a;font-weight:900}
+.project-overlay h3{font-size:21px;margin:5px 0 1px}
+.project-overlay p{font-size:12px;margin:0;opacity:.78}
+
+.capability{background:#f6f8fa}
+.capability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:62px}
+.cap-card{background:#fff;border:1px solid #e0e5ea;border-radius:20px;padding:30px;min-height:335px}
+.cap-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#102033;color:#fff;font-size:12px;font-weight:900}
+.cap-card h3{font-size:24px;margin:28px 0 20px}
+.cap-card ul{list-style:none;margin:0;padding:0}
+.cap-card li,.equip-row,.safety-items div{padding:13px 0;border-top:1px solid #e7ebef;font-size:13px}
+.cap-card li{color:#73808e}
+.equip-row{display:flex;justify-content:space-between;gap:16px}
+.equip-row b{font-size:13px;color:#29384a}
+.equip-row span{color:#8a96a2;text-align:right}
+.safety-items div{display:flex;gap:15px;align-items:center}
+.safety-items b{color:#f28a22;font-size:10px}
+.safety-items span{color:#73808e}
+
+.contact{position:relative;overflow:hidden;background:#f28a22;padding:100px 0;color:#fff}
+.contact-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(90deg,transparent,black)}
+.contact-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact h2{font-size:48px;color:#fff;letter-spacing:-2.4px}
+.contact-copy p:last-child{margin:17px 0 0;color:#fff3e5}
+.contact-panel{background:#fff;border-radius:22px;padding:8px 24px;color:#102033;box-shadow:0 24px 56px rgba(116,63,14,.15)}
+.contact-row{display:flex;align-items:center;justify-content:space-between;padding:20px 2px;border-bottom:1px solid #e8ebee}
+.contact-row:last-child{border-bottom:0}
+.contact-row small{display:block;color:#9aa4af;font-size:9px;letter-spacing:1.3px;margin-bottom:3px}
+.contact-row strong{font-size:18px}
+.contact-row>span{font-size:21px;color:#f28a22}
+.contact-row.disabled{opacity:.72;cursor:default}
+.contact-row.static strong{font-size:15px}
+
+footer{background:#fff;padding:34px 0;border-top:1px solid #e6eaee}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-brand strong{font-size:17px;color:#102033}
+.footer-brand p,.footer-right p{font-size:10px;color:#8e99a5;margin:4px 0 0}
+.footer-right{text-align:right}
+.footer-right a{font-size:10px;font-weight:900;color:#102033}
+
+.mobile-contact{display:none}
+.reveal{opacity:0;transform:translateY(24px);transition:.75s cubic-bezier(.2,.7,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.delay-1{transition-delay:.10s}
+.delay-2{transition-delay:.20s}
+.delay-3{transition-delay:.30s}
+
+@media(max-width:980px){
+  .container{width:min(100% - 36px,1180px)}
+  .site-header{height:72px}
+  .header-inner{width:calc(100% - 36px)}
+  .nav{position:fixed;left:0;right:0;top:72px;display:none;flex-direction:column;align-items:stretch;background:#fff;padding:18px 22px 28px;border-top:1px solid #e7ebef;box-shadow:0 20px 35px rgba(20,37,55,.08);gap:0}
+  .nav.open{display:flex}
+  .nav a{padding:14px 4px;border-bottom:1px solid #edf0f2}
+  .nav-cta{background:none;color:#102033!important;box-shadow:none;border-radius:0}
+  .menu-btn{display:flex;width:40px;height:40px;align-items:flex-end;justify-content:center;flex-direction:column;gap:7px}
+  .menu-btn span{width:24px;height:2px;background:#102033}
+  .menu-btn span:last-child{width:16px}
+  .hero{padding-top:72px}
+  .hero-inner{grid-template-columns:1fr;gap:42px;padding-top:78px;padding-bottom:70px}
+  .hero-visual-wrap{max-width:680px}
+  .hero-photo{height:440px}
+  .card-a{right:14px}
+  .card-b{left:14px}
+  .intro-grid{grid-template-columns:1fr;gap:28px}
+  .intro-copy{padding-top:0}
+  .service-grid,.project-grid,.capability-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .process-item:nth-child(3){border-left:1px solid rgba(255,255,255,.14);border-top:1px solid rgba(255,255,255,.14)}
+  .process-item:nth-child(4){border-top:1px solid rgba(255,255,255,.14)}
+  .contact-inner{grid-template-columns:1fr;gap:42px}
+}
+@media(max-width:640px){
+  .brand-copy strong{max-width:180px}
+  .hero h1{font-size:44px;letter-spacing:-2.4px}
+  .hero-desc{font-size:16px}
+  .hero-actions{flex-direction:column}
+  .btn{width:100%;justify-content:space-between}
+  .hero-trust{display:grid;grid-template-columns:1fr;gap:10px}
+  .hero-visual-wrap{display:none}
+  .stats-inner{grid-template-columns:1fr}
+  .stat,.stat:first-child{border-left:0;border-right:0;border-bottom:1px solid #e7ebef;padding:15px 0}
+  .section{padding:86px 0}
+  .section-heading h2,.process-head h2{font-size:38px;letter-spacing:-2px}
+  .value-row,.service-grid,.project-grid,.capability-grid,.process-grid{grid-template-columns:1fr}
+  .value-row{margin-top:50px}
+  .section-top{display:block}
+  .section-note{margin-top:22px}
+  .process-item,.process-item:first-child,.process-item:nth-child(3){border-left:1px solid rgba(255,255,255,.14);border-right:1px solid rgba(255,255,255,.14);border-top:1px solid rgba(255,255,255,.14)}
+  .process-item:first-child{border-top:0}
+  .project-card{min-height:330px}
+  .contact h2{font-size:38px}
+  .contact-panel{padding:6px 18px}
+  .contact-row strong{font-size:16px}
+  .footer-inner{display:block}
+  .footer-right{text-align:left;margin-top:18px}
+  .mobile-contact{position:fixed;display:flex;left:14px;right:14px;bottom:14px;z-index:90;height:54px;align-items:center;justify-content:space-between;padding:0 20px;background:#102033;color:#fff;border-radius:14px;font-size:13px;font-weight:800;box-shadow:0 16px 34px rgba(16,32,51,.25)}
+}
+
+
+/* V3 company profile */
+.company-facts{
+  margin-top:28px;
+  border:1px solid #e3e8ed;
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+}
+.facts-head{
+  padding:28px 30px 22px;
+  border-bottom:1px solid #e8ecef;
+}
+.facts-head .eyebrow{margin-bottom:7px}
+.facts-head h3{
+  margin:0;
+  font-size:25px;
+  letter-spacing:-1px;
+  color:#102033;
+}
+.facts-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+}
+.fact-row{
+  display:grid;
+  grid-template-columns:135px 1fr;
+  align-items:center;
+  min-height:64px;
+  padding:10px 30px;
+  border-bottom:1px solid #edf0f2;
+}
+.fact-row:nth-child(odd){border-right:1px solid #edf0f2}
+.fact-row .label{
+  font-size:12px;
+  color:#8b96a2;
+}
+.fact-row .value{
+  font-size:14px;
+  font-weight:700;
+  color:#263547;
+  word-break:keep-all;
+}
+.source-note{
+  font-size:10px;
+  color:#a0a9b2;
+}
+@media(max-width:640px){
+  .facts-grid{grid-template-columns:1fr}
+  .fact-row:nth-child(odd){border-right:0}
+  .fact-row{grid-template-columns:110px 1fr;padding:10px 20px}
+}
+\n\n/* V5.2 - compact company information at page bottom */\n.company-meta{\n  background:#f8fafb;\n  border-top:1px solid #e7ebef;\n  border-bottom:1px solid #e7ebef;\n  padding:20px 0;\n}\n.company-meta-inner{\n  display:flex;\n  align-items:flex-start;\n  gap:28px;\n}\n.company-meta-title{\n  flex:0 0 auto;\n  padding-top:2px;\n}\n.company-meta-title span{\n  font-size:9px;\n  font-weight:900;\n  letter-spacing:1.7px;\n  color:#f28a22;\n  white-space:nowrap;\n}\n.company-meta-list{\n  display:flex;\n  flex-wrap:wrap;\n  align-items:center;\n  gap:7px 0;\n  color:#7c8793;\n}\n.company-meta-item{\n  position:relative;\n  font-size:11px;\n  line-height:1.5;\n  padding:0 13px;\n  white-space:nowrap;\n}\n.company-meta-item:first-child{padding-left:0}\n.company-meta-item:not(:last-child)::after{\n  content:"";\n  position:absolute;\n  right:0;\n  top:50%;\n  width:1px;\n  height:10px;\n  background:#d9dfe5;\n  transform:translateY(-50%);\n}\n.company-meta-item b{\n  margin-right:5px;\n  font-size:10px;\n  font-weight:700;\n  color:#a0a9b2;\n}\n@media(max-width:760px){\n  .company-meta{padding:18px 0 78px}\n  .company-meta-inner{display:block}\n  .company-meta-title{margin-bottom:10px}\n  .company-meta-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}\n  .company-meta-item{padding:0;font-size:10px;white-space:normal}\n  .company-meta-item:not(:last-child)::after{display:none}\n  .company-meta-item b{display:block;margin:0 0 2px;font-size:9px}\n}\n
+
+/* =========================================================
+   V5.3 HERO FIX
+   - 임시 우측 그래픽 제거
+   - 제목 줄바꿈을 의도한 2줄로 고정
+   - 넓고 안정적인 첫 화면 구성
+   ========================================================= */
+.hero-inner{
+  min-height:620px;
+  display:block;
+  padding-top:108px;
+  padding-bottom:88px;
+}
+.hero-copy{
+  position:relative;
+  z-index:2;
+  max-width:920px;
+}
+.hero h1{
+  font-size:clamp(48px,5.0vw,66px);
+  line-height:1.13;
+  letter-spacing:-3.1px;
+  max-width:920px;
+}
+.hero h1 > span,
+.hero h1 > em{
+  display:inline-block;
+  white-space:nowrap;
+}
+.hero-desc{
+  max-width:720px;
+  margin-top:30px;
+}
+.hero-trust{
+  max-width:720px;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:470px;
+  height:470px;
+  right:5%;
+  top:130px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(242,138,34,.075) 0 1px,
+      transparent 2px),
+    radial-gradient(circle,rgba(242,138,34,.08),transparent 66%);
+  background-size:24px 24px,auto;
+  pointer-events:none;
+}
+.hero:after{
+  content:"JINWOO";
+  position:absolute;
+  right:5%;
+  bottom:70px;
+  font-size:118px;
+  font-weight:900;
+  letter-spacing:-7px;
+  color:rgba(16,32,51,.025);
+  pointer-events:none;
+}
+@media(max-width:980px){
+  .hero-inner{
+    display:block;
+    padding-top:86px;
+    padding-bottom:72px;
+  }
+  .hero h1{
+    font-size:clamp(46px,7vw,62px);
+  }
+  .hero:before{right:-180px;opacity:.7}
+  .hero:after{display:none}
+}
+@media(max-width:700px){
+  .hero-inner{
+    padding-top:72px;
+    padding-bottom:62px;
+  }
+  .hero h1{
+    font-size:clamp(38px,11vw,48px);
+    letter-spacing:-2.3px;
+  }
+  .hero h1 > span,
+  .hero h1 > em{
+    white-space:normal;
+  }
+}
+
+
+/* =========================================================
+   V5.4 FOOTER REDESIGN
+   기존 COMPANY INFO 박스와 푸터를 하나의 자연스러운 영역으로 통합
+   ========================================================= */
+
+.company-meta{display:none!important;}
+
+.site-footer{
+  background:#f7f9fb;
+  border-top:1px solid #e2e7ec;
+  padding:48px 0 30px;
+  color:#536170;
+}
+
+.footer-main{
+  display:grid;
+  grid-template-columns:minmax(240px,.8fr) minmax(420px,1.5fr) auto;
+  align-items:start;
+  gap:48px;
+}
+
+.site-footer .footer-brand strong{
+  display:block;
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:-.7px;
+  color:#102033;
+}
+
+.site-footer .footer-brand p{
+  margin:7px 0 0;
+  font-size:11px;
+  color:#8a96a3;
+  line-height:1.6;
+}
+
+.footer-contact{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:32px;
+}
+
+.footer-contact-item small{
+  display:block;
+  margin-bottom:6px;
+  color:#9ba5af;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1.4px;
+}
+
+.footer-contact-item a,
+.footer-contact-item span{
+  display:block;
+  color:#344354;
+  font-size:12px;
+  font-weight:650;
+  line-height:1.6;
+  word-break:keep-all;
+}
+
+.footer-top{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:58px;
+  height:36px;
+  padding:0 12px;
+  border:1px solid #d8dee4;
+  border-radius:10px;
+  color:#102033;
+  background:#fff;
+  font-size:9px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.footer-top:hover{
+  border-color:#f28a22;
+  color:#f28a22;
+}
+
+.footer-divider{
+  height:1px;
+  background:#e1e6eb;
+  margin:30px 0 20px;
+}
+
+.footer-bottom{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:36px;
+}
+
+.footer-meta-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px 0;
+  max-width:850px;
+}
+
+.footer-meta-item{
+  position:relative;
+  display:inline-flex;
+  gap:5px;
+  padding:0 12px;
+  font-size:9px;
+  line-height:1.7;
+  color:#8c97a2;
+  white-space:nowrap;
+}
+
+.footer-meta-item:first-child{padding-left:0}
+
+.footer-meta-item:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:50%;
+  width:1px;
+  height:9px;
+  background:#d6dce2;
+  transform:translateY(-50%);
+}
+
+.footer-meta-item b{
+  color:#667483;
+  font-weight:800;
+}
+
+.footer-copy{
+  flex:0 0 auto;
+  margin:0;
+  color:#9aa4ae;
+  font-size:9px;
+  white-space:nowrap;
+}
+
+@media(max-width:900px){
+  .footer-main{
+    grid-template-columns:1fr auto;
+    gap:28px;
+  }
+
+  .footer-contact{
+    grid-column:1/-1;
+    grid-row:2;
+    grid-template-columns:180px 1fr;
+  }
+
+  .footer-top{
+    grid-column:2;
+    grid-row:1;
+  }
+
+  .footer-bottom{
+    display:block;
+  }
+
+  .footer-copy{
+    margin-top:16px;
+  }
+}
+
+@media(max-width:640px){
+  .site-footer{
+    padding:38px 0 94px;
+  }
+
+  .footer-main{
+    grid-template-columns:1fr auto;
+    gap:24px 16px;
+  }
+
+  .footer-contact{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .footer-meta-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 16px;
+  }
+
+  .footer-meta-item{
+    display:block;
+    padding:0;
+    white-space:normal;
+    font-size:9px;
+  }
+
+  .footer-meta-item:not(:last-child)::after{
+    display:none;
+  }
+
+  .footer-meta-item b{
+    display:block;
+    margin-bottom:1px;
+    font-size:8px;
+  }
+
+  .footer-copy{
+    white-space:normal;
+  }
+}
+
+
+/* =========================================================
+   V5.5 MOBILE REFINEMENT
+   실제 스마트폰 폭 360~430px 기준
+   ========================================================= */
+@media(max-width:640px){
+  body{
+    overflow-x:hidden;
+  }
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .site-header{
+    height:64px;
+  }
+
+  .header-inner{
+    width:calc(100% - 28px);
+  }
+
+  .brand{
+    gap:10px;
+    min-width:0;
+  }
+
+  .brand-mark{
+    width:36px;
+    height:36px;
+    border-radius:9px;
+  }
+
+  .brand-mark svg{
+    width:23px;
+  }
+
+  .brand-copy strong{
+    max-width:205px;
+    font-size:15px;
+    letter-spacing:-.4px;
+  }
+
+  .brand-copy small{
+    font-size:6px;
+    letter-spacing:.8px;
+    margin-top:4px;
+  }
+
+  .nav{
+    top:64px;
+    padding:13px 18px 24px;
+  }
+
+  .nav a{
+    padding:13px 4px;
+    font-size:14px;
+  }
+
+  .hero{
+    padding-top:64px;
+  }
+
+  .hero-inner{
+    min-height:auto;
+    padding-top:58px;
+    padding-bottom:52px;
+  }
+
+  .hero-kicker{
+    margin-bottom:18px;
+    font-size:8px;
+    letter-spacing:1.25px;
+  }
+
+  .kicker-dot{
+    width:7px;
+    height:7px;
+    box-shadow:0 0 0 4px rgba(242,138,34,.12);
+  }
+
+  .hero h1{
+    font-size:40px;
+    line-height:1.12;
+    letter-spacing:-2.2px;
+  }
+
+  .hero h1 > span,
+  .hero h1 > em{
+    display:inline;
+    white-space:normal;
+  }
+
+  .hero-desc{
+    margin:22px 0 28px;
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  .hero-actions{
+    gap:9px;
+  }
+
+  .btn{
+    min-height:50px;
+    padding:13px 16px;
+    border-radius:10px;
+    font-size:13px;
+  }
+
+  .hero-trust{
+    margin-top:29px;
+    padding-top:19px;
+    gap:9px;
+  }
+
+  .hero-trust div{
+    gap:8px;
+  }
+
+  .hero-trust strong{
+    font-size:9px;
+  }
+
+  .hero-trust span{
+    font-size:11px;
+  }
+
+  .hero:before{
+    width:300px;
+    height:300px;
+    right:-170px;
+    top:180px;
+    opacity:.5;
+  }
+
+  .stats-bar{
+    background:#fff;
+  }
+
+  .stat,
+  .stat:first-child{
+    padding:14px 2px;
+  }
+
+  .stat strong{
+    font-size:22px;
+  }
+
+  .stat span{
+    font-size:10px;
+  }
+
+  .section{
+    padding:72px 0;
+  }
+
+  .eyebrow{
+    margin-bottom:12px;
+    font-size:9px;
+    letter-spacing:1.5px;
+  }
+
+  .section-heading h2,
+  .process-head h2{
+    font-size:34px;
+    line-height:1.16;
+    letter-spacing:-1.8px;
+  }
+
+  .intro-grid{
+    gap:22px;
+  }
+
+  .intro-copy .lead{
+    font-size:18px;
+    line-height:1.65;
+  }
+
+  .intro-copy p{
+    font-size:13px;
+  }
+
+  .value-row{
+    gap:12px;
+    margin-top:38px;
+  }
+
+  .value-card{
+    padding:23px 22px;
+    border-radius:15px;
+  }
+
+  .value-card h3{
+    font-size:20px;
+    margin:17px 0 3px;
+  }
+
+  .service-grid,
+  .project-grid,
+  .capability-grid{
+    gap:12px;
+    margin-top:38px;
+  }
+
+  .service-card{
+    min-height:auto;
+    padding:24px 22px 26px;
+    border-radius:16px;
+  }
+
+  .service-card .service-icon{
+    width:48px;
+    height:48px;
+    border-radius:13px;
+    margin-top:26px;
+  }
+
+  .service-card h3{
+    font-size:21px;
+    margin-top:20px;
+  }
+
+  .service-card p{
+    font-size:13px;
+  }
+
+  .section-note{
+    margin-top:16px;
+    max-width:none;
+    font-size:12px;
+    line-height:1.7;
+  }
+
+  .process-section{
+    padding:72px 0;
+  }
+
+  .process-grid{
+    margin-top:38px;
+  }
+
+  .process-item{
+    padding:24px 22px;
+  }
+
+  .process-item h3{
+    margin:18px 0 7px;
+    font-size:19px;
+  }
+
+  .project-card{
+    min-height:285px;
+    border-radius:16px;
+  }
+
+  .project-overlay{
+    padding:22px;
+  }
+
+  .project-overlay h3{
+    font-size:18px;
+  }
+
+  .cap-card{
+    min-height:auto;
+    padding:24px 22px;
+    border-radius:16px;
+  }
+
+  .cap-card h3{
+    margin:22px 0 17px;
+    font-size:21px;
+  }
+
+  .contact{
+    padding:72px 0 82px;
+  }
+
+  .contact-inner{
+    gap:30px;
+  }
+
+  .contact h2{
+    font-size:34px;
+    line-height:1.18;
+    letter-spacing:-1.8px;
+  }
+
+  .contact-copy p:last-child{
+    font-size:13px;
+  }
+
+  .contact-panel{
+    border-radius:16px;
+    padding:5px 16px;
+  }
+
+  .contact-row{
+    padding:17px 0;
+  }
+
+  .contact-row small{
+    font-size:8px;
+  }
+
+  .contact-row strong{
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .site-footer{
+    padding:34px 0 88px;
+  }
+
+  .site-footer .footer-brand strong{
+    font-size:17px;
+  }
+
+  .site-footer .footer-brand p{
+    font-size:9px;
+  }
+
+  .footer-contact{
+    margin-top:4px;
+  }
+
+  .footer-contact-item a,
+  .footer-contact-item span{
+    font-size:11px;
+  }
+
+  .footer-meta-list{
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+
+  .footer-meta-item{
+    font-size:8px;
+  }
+
+  .footer-copy{
+    font-size:8px;
+    margin-top:14px;
+  }
+
+  .mobile-contact{
+    left:12px;
+    right:12px;
+    bottom:12px;
+    height:52px;
+    border-radius:12px;
+  }
+}
+
+
+/* =========================================================
+   V5.6 MOBILE TYPOGRAPHY FIX
+   모바일에서 특정 제목이 어색하게 한 글자씩 줄바꿈되는 현상 보정
+   ========================================================= */
+@media(max-width:640px){
+
+  /* HERO: "안전으로 이어온 경험." 한 줄 유지 */
+  #heroTitle2{
+    display:inline-block !important;
+    white-space:nowrap !important;
+    font-size:35px !important;
+    letter-spacing:-2.05px !important;
+    line-height:1.12 !important;
+  }
+
+  /* PROCESS: "문의부터 현장 마무리까지" 한 줄 유지 */
+  #processTitle1{
+    display:inline-block !important;
+    white-space:nowrap !important;
+    font-size:31px !important;
+    letter-spacing:-1.95px !important;
+    line-height:1.16 !important;
+  }
+
+  #processTitle2{
+    display:inline-block !important;
+    margin-top:4px;
+  }
+
+  /* CONTACT: "현장 상담이 필요하신가요?" 한 줄 유지 */
+  #contactTitle{
+    white-space:nowrap !important;
+    font-size:31px !important;
+    letter-spacing:-1.9px !important;
+    line-height:1.16 !important;
+  }
+}
+
+/* 폭이 더 작은 휴대폰에서도 최대한 한 줄 유지 */
+@media(max-width:380px){
+  #heroTitle2{
+    font-size:31px !important;
+    letter-spacing:-1.75px !important;
+  }
+
+  #processTitle1{
+    font-size:27px !important;
+    letter-spacing:-1.55px !important;
+  }
+
+  #contactTitle{
+    font-size:27px !important;
+    letter-spacing:-1.55px !important;
+  }
+}
+
+</style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="홈으로">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M8 38V10h9v10h14V10h9v28h-9V28H17v10z"/></svg>
+        </span>
+        <span class="brand-copy">
+          <strong id="companyName"></strong>          <small id="companyEnglishName"></small>
+        </span>
+      </a>
+
+      <button class="menu-btn" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <a id="navAbout" href="#about"></a>
+        <a id="navServices" href="#services"></a>
+        <a id="navProjects" href="#projects"></a>
+        <a id="navCapability" href="#safety"></a>
+        <a id="navContact" href="#contact" class="nav-cta"></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-orbit orbit-a"></div>
+      <div class="hero-orbit orbit-b"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <div class="hero-kicker">
+            <span class="kicker-dot"></span>
+            <span id="heroKicker"></span>
+          </div>
+
+          <h1>
+            <span id="heroTitle1"></span><br>
+            <em id="heroTitle2"></em>
+          </h1>
+
+          <p class="hero-desc" id="heroDescription"></p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">
+              <span id="heroPrimary"></span> <span>↗</span>
+            </a>
+            <a href="#projects" class="btn btn-outline" id="heroSecondary"></a>
+          </div>
+
+          <div class="hero-trust" id="heroTrust"></div>
+        </div>
+
+      </div>
+
+      <div class="stats-bar">
+        <div class="container stats-inner" id="stats"></div>
+      </div>
+    </section>
+
+    <section class="section intro" id="about">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow" id="aboutEyebrow"></p>
+            <h2><span id="aboutTitle1"></span><br><em id="aboutTitle2"></em></h2>
+          </div>
+
+          <div class="intro-copy reveal delay-1">
+            <p class="lead" id="aboutLead"></p>
+            <p id="aboutBody"></p>
+            <a href="#contact" class="text-link"><span id="aboutLink"></span><span>→</span></a>
+          </div>
+        </div>
+
+        <div class="value-row" id="valueRow"></div>
+
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="section-heading">
+            <p class="eyebrow" id="servicesEyebrow"></p>
+            <h2><span id="servicesTitle1"></span><br><em id="servicesTitle2"></em></h2>
+          </div>
+          <p class="section-note" id="servicesNote"></p>
+        </div>
+        <div class="service-grid" id="serviceGrid"></div>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <div class="container">
+        <div class="process-head reveal">
+          <p class="eyebrow" id="processEyebrow"></p>
+          <h2><span id="processTitle1"></span><br><em id="processTitle2"></em></h2>
+        </div>
+        <div class="process-grid" id="processGrid"></div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="section-heading">
+            <p class="eyebrow" id="projectsEyebrow"></p>
+            <h2><span id="projectsTitle1"></span><br><em id="projectsTitle2"></em></h2>
+          </div>
+          <p class="section-note" id="projectsNote"></p>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <section class="section capability" id="safety">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="section-heading">
+            <p class="eyebrow" id="capabilityEyebrow"></p>
+            <h2><span id="capabilityTitle1"></span><br><em id="capabilityTitle2"></em></h2>
+          </div>
+          <p class="section-note" id="capabilityNote"></p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="cap-card reveal">
+            <div class="cap-icon">A</div>
+            <h3 id="licenseTitle"></h3>
+            <ul id="licenseList"></ul>
+          </article>
+
+          <article class="cap-card reveal delay-1">
+            <div class="cap-icon">B</div>
+            <h3 id="equipmentTitle"></h3>
+            <div id="equipmentList"></div>
+          </article>
+
+          <article class="cap-card safety-card reveal delay-2">
+            <div class="cap-icon">C</div>
+            <h3 id="safetyTitle"></h3>
+            <div class="safety-items" id="safetyItems"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-pattern"></div>
+      <div class="container contact-inner">
+        <div class="contact-copy reveal">
+          <p class="eyebrow white" id="contactEyebrow"></p>
+          <h2 id="contactTitle"></h2>
+          <p id="contactDescription"></p>
+        </div>
+
+        <div class="contact-panel reveal delay-1">
+          <a id="phoneButton" class="contact-row disabled" href="#" aria-disabled="true">
+            <div>
+              <small id="phoneLabel"></small>
+              <strong id="phoneText"></strong>
+            </div>
+            <span>↗</span>
+          </a>
+
+          <a id="emailButton" class="contact-row disabled" href="#" aria-disabled="true">
+            <div>
+              <small id="emailLabel"></small>
+              <strong id="emailText"></strong>
+            </div>
+            <span>↗</span>
+          </a>
+
+          <div class="contact-row static">
+            <div>
+              <small id="addressLabel"></small>
+              <strong id="addressText"></strong>
+            </div>
+          </div>
+
+          <div class="contact-row static">
+            <div>
+              <small id="faxLabel"></small>
+              <strong id="faxText"></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <strong id="footerCompanyName"></strong>
+          <p id="footerBusinessSummary"></p>
+        </div>
+
+        <div class="footer-contact">
+          <div class="footer-contact-item">
+            <small>CONTACT</small>
+            <a id="footerPhone" href="#"></a>
+          </div>
+
+          <div class="footer-contact-item footer-address">
+            <small>ADDRESS</small>
+            <span id="footerAddress"></span>
+          </div>
+        </div>
+
+        <a href="#top" class="footer-top" id="footerTop"></a>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-meta-list" id="factsGrid"></div>
+
+        <p class="footer-copy">
+          © <span id="year"></span>
+          <span id="footerCompanyName2"></span>.
+          <span id="footerRights"></span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#contact" class="mobile-contact"><span id="mobileContactText"></span><span>↗</span></a>
+
+  <script>
+// =====================================================================
+// (주)진우환경개발 홈페이지 V5 — 텍스트/회사정보 수정 전용 파일
+//
+// ★ 앞으로 홈페이지 문구를 수정할 때는 이 파일만 수정하면 됩니다.
+// ★ 따옴표 " " 안의 글자만 바꾸는 것을 권장합니다.
+// ★ 항목을 지우고 싶으면 빈 문자열 "" 로 두면 됩니다.
+// ★ HTML / CSS 파일은 수정할 필요가 없습니다.
+// =====================================================================
+
+window.SITE_CONTENT = {
+
+  // -------------------------------------------------------------------
+  // 1. 회사 기본정보
+  // -------------------------------------------------------------------
+  company: {
+    name: "(주)진우환경개발",
+    englishName: "JINWOO ENVIRONMENT DEVELOPMENT",
+    shortName: "JINWOO",
+
+    ceo: "조숙",
+    founded: "1998년 1월",
+    companyType: "법인 · 중소기업",
+    industry: "건물 및 구축물 해체 공사업",
+    businessNumber: "412-81-14254",
+    corporationNumber: "205511-0006628",
+
+    phone: "061-243-4135",
+    mobile: "",
+    fax: "0504-098-1397",
+    email: "",
+    address: "경기도 부천시 원미구 부일로233번길 19, 3층 301호 (상동, 금강빌딩)",
+    kakaoUrl: ""
+  },
+
+  // -------------------------------------------------------------------
+  // 2. 상단 메뉴
+  // -------------------------------------------------------------------
+  navigation: {
+    about: "회사소개",
+    services: "사업분야",
+    projects: "시공실적",
+    capability: "안전·보유역량",
+    contact: "견적문의"
+  },
+
+  // -------------------------------------------------------------------
+  // 3. 첫 화면 메인 문구
+  // -------------------------------------------------------------------
+  hero: {
+    kicker: "JINWOO ENVIRONMENT DEVELOPMENT",
+    titleLine1: "현장을 지키는 기술,",
+    titleLine2: "안전으로 이어온 경험.",
+    description: "구조물 해체·비계공사와 석면 해체·제거를 중심으로, 현장 조건에 맞는 안전한 시공과 책임 있는 마무리를 제공합니다.",
+
+    primaryButton: "사업분야 보기",
+    secondaryButton: "시공실적 보기",
+
+    trustItems: [
+      { number: "01", text: "안전 중심 작업계획" },
+      { number: "02", text: "현장 맞춤 대응" },
+      { number: "03", text: "책임 있는 마무리" }
+    ]
+  },
+
+  // -------------------------------------------------------------------
+  // 4. 메인 통계
+  // -------------------------------------------------------------------
+  stats: [
+    { value: "1998", label: "설립" },
+    { value: "118건", label: "공사대장 기준 누적 실적" },
+    { value: "28년+", label: "업력" }
+  ],
+
+  // -------------------------------------------------------------------
+  // 5. 회사소개
+  // -------------------------------------------------------------------
+  about: {
+    eyebrow: "ABOUT COMPANY",
+    titleLine1: "안전은 기본이고,",
+    titleLine2: "현장 대응력까지.",
+
+    lead: "현장의 조건을 읽고, 필요한 공정을 정확하게 수행하는 것이 진우환경개발의 기본입니다.",
+
+    body: "(주)진우환경개발은 구조물 해체·비계공사와 석면 해체·제거를 중심으로 다양한 현장 경험을 쌓아왔습니다. 작업 전 안전 검토부터 시공, 현장 정리까지 각 공정의 기본을 지키며 책임 있는 시공을 이어가고 있습니다.",
+
+    linkText: "상담 및 견적 문의"
+  },
+
+  // -------------------------------------------------------------------
+  // 6. 핵심가치
+  // -------------------------------------------------------------------
+  values: [
+    {
+      number: "01",
+      title: "Safety",
+      text: "공정보다 먼저 위험요인을 확인합니다."
+    },
+    {
+      number: "02",
+      title: "Response",
+      text: "현장 여건에 맞춰 빠르고 유연하게 대응합니다."
+    },
+    {
+      number: "03",
+      title: "Responsibility",
+      text: "작업 완료 이후 현장 정리까지 책임집니다."
+    }
+  ],
+
+  // -------------------------------------------------------------------
+  // 7. 회사 기본정보 표
+  // -------------------------------------------------------------------
+  profile: {
+    eyebrow: "COMPANY PROFILE",
+    title: "진우환경개발 기본정보",
+
+    items: [
+      { label: "대표자", value: "조숙" },
+      { label: "설립", value: "1998년 1월" },
+      { label: "기업형태", value: "법인 · 중소기업" },
+      { label: "표준산업분류", value: "건물 및 구축물 해체 공사업" },
+      { label: "전문건설업", value: "구조물해체·비계공사업" },
+      { label: "사업자등록번호", value: "412-81-14254" }
+    ]
+  },
+
+  // -------------------------------------------------------------------
+  // 8. 사업분야
+  // -------------------------------------------------------------------
+  servicesSection: {
+    eyebrow: "BUSINESS AREA",
+    titleLine1: "현장에 필요한 공사를",
+    titleLine2: "한 곳에서.",
+    note: "구조물 해체·비계, 석면 해체·제거 등 주요 전문공사를 중심으로 현장에 대응합니다."
+  },
+
+  services: [
+    {
+      code: "01",
+      icon: "▦",
+      title: "구조물 해체·비계공사",
+      subtitle: "DEMOLITION & SCAFFOLDING",
+      description: "건축물과 구축물의 해체 및 현장 작업을 위한 비계 설치·해체 공사를 수행합니다."
+    },
+    {
+      code: "02",
+      icon: "◇",
+      title: "석면 해체·제거",
+      subtitle: "ASBESTOS REMOVAL",
+      description: "석면 함유 건축자재의 해체·제거와 관련 작업을 안전 절차에 따라 수행합니다."
+    },
+    {
+      code: "03",
+      icon: "▱",
+      title: "방수·도장",
+      subtitle: "WATERPROOFING & PAINT",
+      description: "건축물과 시설물의 방수·도장 관련 공사를 현장 조건에 맞춰 수행합니다."
+    },
+    {
+      code: "04",
+      icon: "＋",
+      title: "청소·위생용역",
+      subtitle: "CLEANING & SANITATION",
+      description: "공사 및 시설 현장의 정리, 청소와 위생 관련 용역을 수행합니다."
+    },
+    {
+      code: "05",
+      icon: "↙",
+      title: "내부철거·원상복구",
+      subtitle: "STRIP-OUT & RESTORATION",
+      description: "건축물 내부 철거와 작업 이후 원상복구 등 현장 조건에 맞는 후속 공사를 수행합니다."
+    },
+    {
+      code: "06",
+      icon: "△",
+      title: "가설시설·안전시설",
+      subtitle: "TEMPORARY & SAFETY WORKS",
+      description: "공사 진행에 필요한 가설시설과 안전시설의 설치·해체 등 현장 지원 작업에 대응합니다."
+    }
+  ],
+
+  // -------------------------------------------------------------------
+  // 9. 작업 진행절차
+  // -------------------------------------------------------------------
+  processSection: {
+    eyebrow: "WORK PROCESS",
+    titleLine1: "문의부터 현장 마무리까지",
+    titleLine2: "체계적으로 진행합니다."
+  },
+
+  process: [
+    {
+      number: "01",
+      title: "현장 문의",
+      text: "공사 위치와 공종, 일정 등을 확인합니다."
+    },
+    {
+      number: "02",
+      title: "현장 검토",
+      text: "작업 조건과 위험요인, 작업 범위를 검토합니다."
+    },
+    {
+      number: "03",
+      title: "작업 계획",
+      text: "공정과 안전계획을 정리하고 작업을 준비합니다."
+    },
+    {
+      number: "04",
+      title: "시공 및 정리",
+      text: "작업 수행 후 현장 정리와 후속 사항을 확인합니다."
+    }
+  ],
+
+  // -------------------------------------------------------------------
+  // 10. 시공실적 섹션
+  // -------------------------------------------------------------------
+  projectsSection: {
+    eyebrow: "PROJECTS",
+    titleLine1: "현장이 증명하는",
+    titleLine2: "시공 실적.",
+    note: "대표 시공실적과 현장사진을 순차적으로 추가할 수 있습니다."
+  },
+
+  projects: [
+    {
+      title: "2025년 학교 석면 위해성평가 및 유지보수 용역",
+      category: "석면 위해성평가 · 유지보수",
+      location: "경기도교육청 경기도시흥교육지원청 · 2025",
+      image: ""
+    },
+    {
+      title: "천주교광주대교구청 브레디관 석면해체공사",
+      category: "석면 해체공사",
+      location: "광주광역시 서구 · 2025",
+      image: ""
+    },
+    {
+      title: "안양동 517-14 일원 석면 해체·제거",
+      category: "석면 해체·제거",
+      location: "경기도 안양시 만안구 · 2025",
+      image: ""
+    }
+  ],
+
+  // -------------------------------------------------------------------
+  // 11. 안전 / 면허 / 장비
+  // -------------------------------------------------------------------
+  capabilitySection: {
+    eyebrow: "CAPABILITY & SAFETY",
+    titleLine1: "신뢰를 보여주는",
+    titleLine2: "보유 역량.",
+    note: "확인 가능한 업종은 반영했으며 등록번호·보유장비 세부정보는 회사 자료 확인 후 추가합니다."
+  },
+
+  capabilityTitles: {
+    license: "면허·등록",
+    equipment: "보유장비",
+    safety: "안전관리"
+  },
+
+  licenses: [
+    "구조물해체·비계공사업",
+    "석면 해체·제거 관련 등록정보 — 등록번호 추후 입력"
+  ],
+
+  equipment: [
+    {
+      name: "보유장비",
+      spec: "실제 장비명 / 규격 / 수량 입력 예정"
+    }
+  ],
+
+  safetyItems: [
+    { number: "01", text: "작업 전 위험요인 확인" },
+    { number: "02", text: "공종별 안전절차 준수" },
+    { number: "03", text: "현장 정리 및 후속 관리" },
+    { number: "04", text: "작업자 중심 안전관리" }
+  ],
+
+  // -------------------------------------------------------------------
+  // 12. 문의 영역
+  // -------------------------------------------------------------------
+  contact: {
+    eyebrow: "CONTACT",
+    title: "현장 상담이 필요하신가요?",
+    description: "공사 위치와 공종을 알려주시면 확인 후 상담드릴 수 있습니다.",
+
+    phoneLabel: "대표전화",
+    emptyPhone: "전화번호 입력 예정",
+
+    emailLabel: "이메일",
+    emptyEmail: "이메일 입력 예정",
+
+    addressLabel: "회사주소",
+    emptyAddress: "회사 주소 입력 예정",
+
+    faxLabel: "FAX",
+    emptyFax: "팩스번호 입력 예정"
+  },
+
+  // -------------------------------------------------------------------
+  // 13. 하단
+  // -------------------------------------------------------------------
+  footer: {
+    businessSummary: "구조물해체·비계공사 · 석면 해체·제거 · 방수·도장",
+    topText: "TOP ↑",
+    rightsText: "All rights reserved."
+  },
+
+  // -------------------------------------------------------------------
+  // 14. 모바일 하단 고정버튼
+  // -------------------------------------------------------------------
+  mobileContactText: "현장 견적 문의"
+};
+
+</script>
+  <script>
+(() => {
+  const d = window.SITE_CONTENT || {};
+
+  const $ = id => document.getElementById(id);
+  const set = (id, value = "") => {
+    const el = $(id);
+    if (el) el.textContent = value ?? "";
+  };
+
+  const company = d.company || {};
+  const nav = d.navigation || {};
+  const hero = d.hero || {};
+  const about = d.about || {};
+  const profile = d.profile || {};
+  const servicesSection = d.servicesSection || {};
+  const processSection = d.processSection || {};
+  const projectsSection = d.projectsSection || {};
+  const capabilitySection = d.capabilitySection || {};
+  const capabilityTitles = d.capabilityTitles || {};
+  const contact = d.contact || {};
+  const footer = d.footer || {};
+
+  // 회사 / 메뉴
+  set("companyName", company.name);
+  set("companyEnglishName", company.englishName);
+  set("navAbout", nav.about);
+  set("navServices", nav.services);
+  set("navProjects", nav.projects);
+  set("navCapability", nav.capability);
+  set("navContact", nav.contact);
+
+  document.title = `${company.name || "회사 홈페이지"} | ${d.services?.[0]?.title || "전문공사"}`;
+
+  // HERO
+  set("heroKicker", hero.kicker);
+  set("heroTitle1", hero.titleLine1);
+  set("heroTitle2", hero.titleLine2);
+  set("heroDescription", hero.description);
+  set("heroPrimary", hero.primaryButton);
+  set("heroSecondary", hero.secondaryButton);
+
+  const heroTrust = $("heroTrust");
+  (hero.trustItems || []).forEach(item => {
+    heroTrust.insertAdjacentHTML("beforeend",
+      `<div><strong>${item.number}</strong><span>${item.text}</span></div>`);
+  });
+
+  // 통계
+  const stats = $("stats");
+  (d.stats || []).forEach(item => {
+    stats.insertAdjacentHTML("beforeend",
+      `<div class="stat"><strong>${item.value}</strong><span>${item.label}</span></div>`);
+  });
+
+  // 회사소개
+  set("aboutEyebrow", about.eyebrow);
+  set("aboutTitle1", about.titleLine1);
+  set("aboutTitle2", about.titleLine2);
+  set("aboutLead", about.lead);
+  set("aboutBody", about.body);
+  set("aboutLink", about.linkText);
+
+  // 핵심가치
+  const valueRow = $("valueRow");
+  (d.values || []).forEach((item, i) => {
+    valueRow.insertAdjacentHTML("beforeend", `
+      <article class="value-card reveal ${i === 1 ? "delay-1" : i === 2 ? "delay-2" : ""}">
+        <span>${item.number}</span>
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+      </article>`);
+  });
+
+  // 회사 프로필
+  const factsGrid = $("factsGrid");
+  (profile.items || []).forEach(item => {
+    factsGrid.insertAdjacentHTML("beforeend", `
+      <span class="footer-meta-item">
+        <b>${item.label}</b>
+        <span>${item.value}</span>
+      </span>`);
+  });
+
+  // 사업분야 섹션
+  set("servicesEyebrow", servicesSection.eyebrow);
+  set("servicesTitle1", servicesSection.titleLine1);
+  set("servicesTitle2", servicesSection.titleLine2);
+  set("servicesNote", servicesSection.note);
+
+  const serviceGrid = $("serviceGrid");
+  (d.services || []).forEach((item, i) => {
+    serviceGrid.insertAdjacentHTML("beforeend", `
+      <article class="service-card reveal ${i % 3 === 1 ? "delay-1" : i % 3 === 2 ? "delay-2" : ""}">
+        <span class="code">${item.code}</span>
+        <div class="service-icon">${item.icon || "•"}</div>
+        <h3>${item.title}</h3>
+        <div class="sub">${item.subtitle}</div>
+        <p>${item.description}</p>
+      </article>`);
+  });
+
+  // 작업절차
+  set("processEyebrow", processSection.eyebrow);
+  set("processTitle1", processSection.titleLine1);
+  set("processTitle2", processSection.titleLine2);
+
+  const processGrid = $("processGrid");
+  (d.process || []).forEach((item, i) => {
+    processGrid.insertAdjacentHTML("beforeend", `
+      <div class="process-item reveal ${i === 1 ? "delay-1" : i === 2 ? "delay-2" : i === 3 ? "delay-3" : ""}">
+        <span class="process-no">${item.number}</span>
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+      </div>`);
+  });
+
+  // 시공실적
+  set("projectsEyebrow", projectsSection.eyebrow);
+  set("projectsTitle1", projectsSection.titleLine1);
+  set("projectsTitle2", projectsSection.titleLine2);
+  set("projectsNote", projectsSection.note);
+
+  const siteIcon = `<svg viewBox="0 0 100 100"><path fill="#39546a" d="M12 78h76v7H12zM20 70V25h7v45zm26 0V15h7v55zm27 0V31h7v39zM17 25h16v6H17zm24-10h18v6H41zm27 16h17v6H68z"/></svg>`;
+  const projectGrid = $("projectGrid");
+
+  (d.projects || []).forEach((item, i) => {
+    const visual = item.image
+      ? `<img src="${item.image}" alt="${item.title}" loading="lazy">`
+      : `<div class="project-placeholder">${siteIcon}</div>`;
+
+    projectGrid.insertAdjacentHTML("beforeend", `
+      <article class="project-card reveal ${i % 3 === 1 ? "delay-1" : i % 3 === 2 ? "delay-2" : ""}">
+        ${visual}
+        <div class="project-overlay">
+          <small>${item.category}</small>
+          <h3>${item.title}</h3>
+          <p>${item.location}</p>
+        </div>
+      </article>`);
+  });
+
+  // 보유역량
+  set("capabilityEyebrow", capabilitySection.eyebrow);
+  set("capabilityTitle1", capabilitySection.titleLine1);
+  set("capabilityTitle2", capabilitySection.titleLine2);
+  set("capabilityNote", capabilitySection.note);
+  set("licenseTitle", capabilityTitles.license);
+  set("equipmentTitle", capabilityTitles.equipment);
+  set("safetyTitle", capabilityTitles.safety);
+
+  const licenseList = $("licenseList");
+  (d.licenses || []).forEach(item => {
+    licenseList.insertAdjacentHTML("beforeend", `<li>${item}</li>`);
+  });
+
+  const equipmentList = $("equipmentList");
+  (d.equipment || []).forEach(item => {
+    equipmentList.insertAdjacentHTML("beforeend",
+      `<div class="equip-row"><b>${item.name}</b><span>${item.spec}</span></div>`);
+  });
+
+  const safetyItems = $("safetyItems");
+  (d.safetyItems || []).forEach(item => {
+    safetyItems.insertAdjacentHTML("beforeend",
+      `<div><b>${item.number}</b><span>${item.text}</span></div>`);
+  });
+
+  // 문의
+  set("contactEyebrow", contact.eyebrow);
+  set("contactTitle", contact.title);
+  set("contactDescription", contact.description);
+  set("phoneLabel", contact.phoneLabel);
+  set("emailLabel", contact.emailLabel);
+  set("addressLabel", contact.addressLabel);
+  set("faxLabel", contact.faxLabel);
+
+  const phone = company.phone || company.mobile || "";
+  const phoneButton = $("phoneButton");
+  if (phone) {
+    set("phoneText", phone);
+    phoneButton.href = `tel:${phone.replace(/[^\d+]/g, "")}`;
+    phoneButton.classList.remove("disabled");
+    phoneButton.removeAttribute("aria-disabled");
+  } else {
+    set("phoneText", contact.emptyPhone);
+    phoneButton.addEventListener("click", e => e.preventDefault());
+  }
+
+  const emailButton = $("emailButton");
+  if (company.email) {
+    set("emailText", company.email);
+    emailButton.href = `mailto:${company.email}`;
+    emailButton.classList.remove("disabled");
+    emailButton.removeAttribute("aria-disabled");
+  } else {
+    set("emailText", contact.emptyEmail);
+    emailButton.addEventListener("click", e => e.preventDefault());
+  }
+
+  set("addressText", company.address || contact.emptyAddress);
+  set("faxText", company.fax || contact.emptyFax);
+
+  // Footer
+  set("footerCompanyName", company.name);
+  set("footerCompanyName2", company.name);
+  set("footerBusinessSummary", footer.businessSummary);
+  set("footerTop", footer.topText);
+  set("footerRights", footer.rightsText);
+
+  const footerPhone = $("footerPhone");
+  if (footerPhone) {
+    footerPhone.textContent = company.phone || company.mobile || "-";
+    if (company.phone || company.mobile) {
+      const footerPhoneValue = company.phone || company.mobile;
+      footerPhone.href = `tel:${footerPhoneValue.replace(/[^\d+]/g, "")}`;
+    } else {
+      footerPhone.href = "#";
+    }
+  }
+  set("footerAddress", company.address || "-");
+  set("mobileContactText", d.mobileContactText);
+  set("year", new Date().getFullYear());
+
+  // 모바일 메뉴
+  const menuButton = document.querySelector(".menu-btn");
+  const navElement = document.querySelector(".nav");
+  menuButton.addEventListener("click", () => {
+    const open = navElement.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(open));
+  });
+
+  document.querySelectorAll(".nav a").forEach(a => {
+    a.addEventListener("click", () => {
+      navElement.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // 스크롤 애니메이션
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("on");
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+})();
+
+</script>
+</body>
+</html>
