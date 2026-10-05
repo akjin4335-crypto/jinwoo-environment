@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="진우환경개발 전문건설 홈페이지" />
   <meta name="theme-color" content="#ffffff" />
-  <title>진우환경개발</title>
+  <title>진우환경개발 | 구조물 해체·비계·석면 해체</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -987,6 +987,60 @@ footer{background:#fff;padding:34px 0;border-top:1px solid #e6eaee}
   }
 }
 
+
+/* V5.7 - REAL FIELD PHOTOS */
+@media(min-width:981px){
+  .hero-inner{display:grid!important;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr)!important;gap:56px!important;align-items:center!important;min-height:650px!important;padding-top:86px!important;padding-bottom:76px!important}
+  .hero-copy{max-width:680px!important}
+  .hero h1{font-size:clamp(48px,4.4vw,62px)!important;max-width:680px!important}
+  .hero:before{opacity:.20}.hero:after{display:none}
+}
+.hero-site-photo{position:relative;margin:0;height:465px;overflow:hidden;border-radius:26px;box-shadow:0 28px 62px rgba(16,32,51,.18);background:#dfe6eb}
+.hero-site-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(7,20,31,.70));pointer-events:none}
+.hero-site-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-site-photo figcaption{position:absolute;z-index:2;left:26px;right:26px;bottom:24px;color:#fff}
+.hero-site-photo figcaption span{display:block;margin-bottom:4px;font-size:8px;font-weight:900;letter-spacing:1.7px;color:#ffc27e}
+.hero-site-photo figcaption strong{font-size:20px;letter-spacing:-.7px}
+.field-gallery-head{margin-top:88px;max-width:700px}
+.field-gallery-head .eyebrow{margin-bottom:10px}
+.field-gallery-head h3{margin:0;color:#102033;font-size:32px;line-height:1.25;letter-spacing:-1.5px}
+.field-gallery-head>p:last-child{margin:12px 0 0;color:#87929e;font-size:12px;line-height:1.75}
+.field-gallery{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-auto-rows:330px;gap:16px;margin-top:30px}
+.field-photo{position:relative;margin:0;overflow:hidden;border-radius:18px;background:#dce3e8}
+.field-photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}
+.field-photo:hover img{transform:scale(1.035)}
+.field-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(8,23,35,.78))}
+.field-photo figcaption{position:absolute;z-index:2;left:20px;right:20px;bottom:17px;color:#fff}
+.field-photo figcaption b{display:block;font-size:17px;letter-spacing:-.5px}
+.field-photo figcaption span{display:block;margin-top:2px;font-size:10px;opacity:.78}
+.safety-showcase{display:grid;grid-template-columns:1.15fr .85fr;min-height:360px;margin-top:62px;overflow:hidden;border-radius:20px;background:#102033}
+.safety-showcase img{width:100%;height:100%;min-height:360px;object-fit:cover}
+.safety-showcase-copy{display:flex;flex-direction:column;justify-content:center;padding:42px 38px;color:#fff}
+.safety-showcase-copy>span{margin-bottom:12px;color:#f4a14d;font-size:9px;font-weight:900;letter-spacing:1.7px}
+.safety-showcase-copy strong{font-size:24px;line-height:1.45;letter-spacing:-1px}
+.safety-showcase-copy p{margin:15px 0 0;color:#b3bdc7;font-size:13px;line-height:1.75}
+.capability-grid{margin-top:18px!important}
+@media(max-width:980px){
+  .hero-site-photo{height:390px;margin-top:34px}
+  .field-gallery{grid-template-columns:1fr;grid-auto-rows:330px}
+  .safety-showcase{grid-template-columns:1fr}
+  .safety-showcase img{height:360px;min-height:0}
+}
+@media(max-width:640px){
+  .hero-site-photo{height:235px;margin-top:30px;border-radius:16px}
+  .hero-site-photo figcaption{left:18px;right:18px;bottom:16px}
+  .hero-site-photo figcaption strong{font-size:16px}
+  .field-gallery-head{margin-top:58px}
+  .field-gallery-head h3{font-size:26px}
+  .field-gallery{grid-auto-rows:235px;gap:10px;margin-top:22px}
+  .field-photo{min-height:235px;border-radius:14px}
+  .field-photo figcaption{left:16px;right:16px;bottom:14px}
+  .field-photo figcaption b{font-size:16px}
+  .safety-showcase{margin-top:38px;border-radius:16px}
+  .safety-showcase img{height:235px}
+  .safety-showcase-copy{padding:26px 22px}
+  .safety-showcase-copy strong{font-size:20px}
+}
 </style>
 </head>
 <body>
@@ -1044,6 +1098,13 @@ footer{background:#fff;padding:34px 0;border-top:1px solid #e6eaee}
           <div class="hero-trust" id="heroTrust"></div>
         </div>
 
+        <figure class="hero-site-photo reveal delay-1">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3KDXiHD5V26xkCN7vljf1sNWg2s/14ec3e1f-5154-4903-a613-cce27125a3f9.jpg" alt="구조물 해체 작업 현장" fetchpriority="high">
+          <figcaption>
+            <span>FIELD EXPERIENCE</span>
+            <strong>현장에서 쌓아온 시공 경험</strong>
+          </figcaption>
+        </figure>
       </div>
 
       <div class="stats-bar">
@@ -1104,6 +1165,27 @@ footer{background:#fff;padding:34px 0;border-top:1px solid #e6eaee}
           <p class="section-note" id="projectsNote"></p>
         </div>
         <div class="project-grid" id="projectGrid"></div>
+
+        <div class="field-gallery-head reveal">
+          <p class="eyebrow">FIELD GALLERY</p>
+          <h3>실제 현장의 모습을 확인하세요.</h3>
+          <p>회사에서 제공한 실제 작업 현장 사진을 공종별 예시로 구성했습니다.</p>
+        </div>
+
+        <div class="field-gallery">
+          <figure class="field-photo field-photo-wide reveal">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3KDXiHD5V26xkCN7vljf1sNWg2s/68bb3402-e52e-4096-bee4-7bf2fd0f96e6.jpg" alt="구조물 해체 작업 현장" loading="lazy">
+            <figcaption><b>구조물 해체</b><span>장비를 활용한 건축물 해체 작업</span></figcaption>
+          </figure>
+          <figure class="field-photo reveal delay-1">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3KDXiHD5V26xkCN7vljf1sNWg2s/af0ceb7b-aff6-4a00-aaeb-f6ad4ccef6e8.jpg" alt="석면 해체 제거 작업 준비 현장" loading="lazy">
+            <figcaption><b>석면 해체·제거</b><span>보양 및 보호구를 갖춘 작업 현장</span></figcaption>
+          </figure>
+          <figure class="field-photo reveal delay-2">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3KDXiHD5V26xkCN7vljf1sNWg2s/7906f003-3a41-4d02-91ff-db2e1329d552.jpg" alt="비계 및 가설시설 작업 현장" loading="lazy">
+            <figcaption><b>비계·가설시설</b><span>현장 조건에 맞춘 가설시설 작업</span></figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -1115,6 +1197,15 @@ footer{background:#fff;padding:34px 0;border-top:1px solid #e6eaee}
             <h2><span id="capabilityTitle1"></span><br><em id="capabilityTitle2"></em></h2>
           </div>
           <p class="section-note" id="capabilityNote"></p>
+        </div>
+
+        <div class="safety-showcase reveal">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3KDXiHD5V26xkCN7vljf1sNWg2s/ece85394-05ed-4277-a42c-bbbb7e41078d.jpg" alt="안전장비를 착용한 고소 작업 현장" loading="lazy">
+          <div class="safety-showcase-copy">
+            <span>SAFETY ON SITE</span>
+            <strong>작업 환경에 맞는 안전장비와 절차를 기본으로 합니다.</strong>
+            <p>고소 작업을 포함한 현장에서는 작업 전 위험요인을 확인하고 필요한 보호구와 안전장비를 갖춰 작업합니다.</p>
+          </div>
         </div>
 
         <div class="capability-grid">
@@ -1443,7 +1534,7 @@ window.SITE_CONTENT = {
     eyebrow: "PROJECTS",
     titleLine1: "현장이 증명하는",
     titleLine2: "시공 실적.",
-    note: "대표 시공실적과 현장사진을 순차적으로 추가할 수 있습니다."
+    note: "확인 가능한 대표 시공실적과 회사 제공 현장사진을 함께 소개합니다."
   },
 
   projects: [
