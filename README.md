@@ -11,6 +11,6 @@ Repository → Settings → Pages → Build and deployment → Source: **Deploy 
 Branch: **main** / **(root)** → Save
 
 예상 공개 주소:
-https://akjin4335-crypto.github.io/jinwoo-environment/
+https://temondo-lab.github.io/jinwoo-environment/
 
 사이트 내용을 수정하면 같은 주소에 계속 반영할 수 있습니다.
